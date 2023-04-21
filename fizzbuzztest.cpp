@@ -19,48 +19,33 @@ TEST_F(FizzBuzzTest,WhenTalIsDivisibleBy3And5ThenFizzBuzzShouldBeReturned)
 {
     int tal[] = { 15, 30, 45, 75, 90 };
     char buffer[10];
-    bool testSuccess = true;
     for(int i = 0; i < sizeof(tal) / sizeof(tal[0]); i++)
     {
         calculateFizzBuzz(tal[i], buffer);
-        if(strcmp("FizzBuzz", buffer) != 0)
-        {
-            testSuccess = false;
-        }
+        ASSERT_STREQ("Buzz", buffer);
     }
-    ASSERT_FALSE(!testSuccess);
 }
 
 TEST_F(FizzBuzzTest,WhenTalIsDivisibleBy3ThenFizzShouldBeReturned)
 {
     int tal[] = { 3, 6, 9, 18, 36 };
     char buffer[10];
-    bool testSuccess = true;
     for(int i = 0; i < sizeof(tal) / sizeof(tal[0]); i++)
     {
         calculateFizzBuzz(tal[i], buffer);
-        if(strcmp("Fizz", buffer) != 0)
-        {
-            testSuccess = false;
-        }
+        ASSERT_STREQ("Buzz", buffer);
     }
-    ASSERT_FALSE(!testSuccess);
 }
 
 TEST_F(FizzBuzzTest,WhenTalIsDivisibleBy5ThenBuzzShouldBeReturned)
 {
     int tal[] = { 5, 10, 25, 35, 85 };
     char buffer[10];
-    bool testSuccess = true;
     for(int i = 0; i < sizeof(tal) / sizeof(tal[0]); i++)
     {
         calculateFizzBuzz(tal[i], buffer);
-        if(strcmp("Buzz", buffer) != 0)
-        {
-            testSuccess = false;
-        }
+        ASSERT_STREQ("Buzz", buffer);
     }
-    ASSERT_FALSE(!testSuccess);
 }
 
 TEST_F(FizzBuzzTest,WhenTalIsNotDivisibleBy3Or5ThenBuzzShouldBeReturned)
