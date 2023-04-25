@@ -1,2 +1,5 @@
 /bin
 /fizzbuzz-debug.exe
+*.o
+*.exe
+.gitignore
