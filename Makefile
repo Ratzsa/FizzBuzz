@@ -16,9 +16,6 @@ else
 	OUTPUTDIR=bin/release
 endif
 
-#Kommer vi behöva kunna göra massa olika makefiler ute på företag?
-#om man nämner makefiles på CV vilken nivå ligger vi på ungefär efter denna utbildning 1-5 :)
-# $^ betyder den allt på raden efter exempel $(TEST): ?
 OBJS =  $(addprefix $(OUTPUTDIR)/,$(SOURCES:.c=.o))
 
 $(PROG): $(OUTPUTDIR) $(OBJS) 
